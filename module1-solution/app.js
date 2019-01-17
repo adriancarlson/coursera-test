@@ -11,6 +11,8 @@ angular.module('LunchCheck', [])
         $scope.lunchMenu ="";
         $scope.numberofItems = 0;
         $scope.message = "";
+        $scope.color ="red";
+        $scope.border ="none";
         
         $scope.countItems = function (){
             var countValue = ($scope.lunchMenu.split(',').length -1);
@@ -18,10 +20,14 @@ angular.module('LunchCheck', [])
             
             if ($scope.numberofItems == 0){
                 $scope.message = "Please enter data first";
-            } else if ($scope.numberofItems <= 3){
+            } else if ($scope.numberofItems <= 2){
                 $scope.message = "Enjoy!";
+                $scope.color ="green";
+                $scope.border ="solid";
             } else {
                 $scope.message = "Too Much!";
+                $scope.color ="red";
+                $scope.border ="solid";
             }
             
             
